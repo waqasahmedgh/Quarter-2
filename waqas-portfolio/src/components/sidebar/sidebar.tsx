@@ -82,7 +82,7 @@ const Sidebar = () => {
         <div className="copyright">
           Created By{" "}
           <a
-            href="http://www.google.com"
+            href="https://waqas-portfolio-nu.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
           >

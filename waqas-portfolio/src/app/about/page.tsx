@@ -14,30 +14,36 @@ const About: NextPage = () => {
             <div className="about-content padd-15">
               <div className="row">
                 <div className="about-text padd-15">
-                  <h2>
-                    I am Waqas Ahmed. <span>Your Expertise</span>
-                  </h2>
+                  <h2>I am Waqas Ahmed.</h2>
                   <p>
-                    Hi! My name is Waqas Ahmed. I am a your expertise, and I am
-                    very passionate and dedicated to my work. With 4 years
-                    experience as a your expertise, I have acquired the skills
-                    and knowledge necessary to make your project a success. I
-                    enjoy every step of the design process, from discussion and
-                    collaboration. My favorite part of programming is the
-                    problem-solving aspect. I love the feeling of finally
-                    figuring out a solution to a problem. My core stack is
-                    Oracle, Oracle Developer, React, Next.js, Node.js,
-                    JavaScript and Typescript . I am also familiar I am always
-                    looking to learn new technologies.
+                    Asslam-o-Aliakum! My name is Waqas Ahmed. I am your
+                    expertise, and I am very passionate and dedicated to my
+                    work. With 4 years experience as a your expertise, I have
+                    acquired the skills and knowledge necessary to make your
+                    project a success. I enjoy every step of the design process,
+                    from discussion and collaboration. My favorite part of
+                    programming is the problem-solving aspect. I love the
+                    feeling of finally figuring out a solution to a problem. My
+                    core stack is Oracle, Oracle Developer, React, Next.js,
+                    Node.js, JavaScript and Typescript . I am also familiar I am
+                    always looking to learn new technologies.
                   </p>
                 </div>
               </div>
               <div className="row">
                 <div className="personal-info padd-15">
                   <div className="row">
-                    <div className="info-item padd-15">
+                    <div className="info-item padd-50">
                       <p>
-                        Website : <span>www.urfolio.vercel.app</span>
+                        Website :{" "}
+                        <span>
+                          <a
+                            href="https://waqas-portfolio-nu.vercel.app"
+                            target="_blank"
+                          >
+                            https://waqas-portfolio-nu.vercel.app
+                          </a>
+                        </span>
                       </p>
                     </div>
                     <div className="info-item padd-15">
@@ -68,11 +74,7 @@ const About: NextPage = () => {
                   </div>
                   <div className="row">
                     <div className="buttons padd-15">
-                      <a
-                        href="/assets/docs/resume.pdf"
-                        target="_target"
-                        className="btn"
-                      >
+                      <a href="/" target="_target" className="btn">
                         Download CV
                       </a>
                       <a
@@ -90,14 +92,14 @@ const About: NextPage = () => {
                     <div className="skill-item padd-15">
                       <h5>Html5</h5>
                       <div className="progress">
-                        <div className="progress-in" style={{ width: "80%" }} />
+                        <div className="progress-in" style={{ width: "25%" }} />
                         <div className="skill-percent">25%</div>
                       </div>
                     </div>
                     <div className="skill-item padd-15">
                       <h5>CSS</h5>
                       <div className="progress">
-                        <div className="progress-in" style={{ width: "60%" }} />
+                        <div className="progress-in" style={{ width: "20%" }} />
                         <div className="skill-percent">20%</div>
                       </div>
                     </div>
