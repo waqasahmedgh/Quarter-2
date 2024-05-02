@@ -30,8 +30,8 @@ const Sidebar = () => {
               alt="Waqas Logo"
               width={"120"}
               height={"120"}
-              quality={"100"}
-              priority={true}
+              // quality={"100"}
+              // priority={true}
             />
           </Link>
         </div>

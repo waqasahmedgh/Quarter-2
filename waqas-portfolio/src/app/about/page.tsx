@@ -14,19 +14,18 @@ const About: NextPage = () => {
             <div className="about-content padd-15">
               <div className="row">
                 <div className="about-text padd-15">
-                  <h2>I am Waqas Ahmed.</h2>
+                  <h2>Waqas Ahmed</h2>
                   <p>
-                    Asslam-o-Aliakum! My name is Waqas Ahmed. I am your
-                    expertise, and I am very passionate and dedicated to my
-                    work. With 4 years experience as a your expertise, I have
-                    acquired the skills and knowledge necessary to make your
-                    project a success. I enjoy every step of the design process,
-                    from discussion and collaboration. My favorite part of
-                    programming is the problem-solving aspect. I love the
-                    feeling of finally figuring out a solution to a problem. My
-                    core stack is Oracle, Oracle Developer, React, Next.js,
-                    Node.js, JavaScript and Typescript . I am also familiar I am
-                    always looking to learn new technologies.
+                    Asslam-o-Aliakum! I am your expertise, and I am very
+                    passionate and dedicated to my work. With 4 years
+                    experience, I have acquired the skills and knowledge
+                    necessary to make your project a success. I enjoy every step
+                    of the design process, from discussion and collaboration. My
+                    favorite part of programming is the problem-solving aspect.
+                    I love the feeling of finally figuring out a solution to a
+                    problem. My core stack is Oracle, Oracle Developer, React,
+                    Next.js, Node.js, JavaScript and Typescript . I am also
+                    familiar I am always looking to learn new technologies.
                   </p>
                 </div>
               </div>
@@ -48,12 +47,15 @@ const About: NextPage = () => {
                     </div>
                     <div className="info-item padd-15">
                       <p>
-                        Email : <span>waqasahmed75@gmail.com</span>
+                        Email :{" "}
+                        <a href="mailto:waqasahmed75@gmail.com" target="_blank">
+                          <span>waqasahmed75@gmail.com</span>
+                        </a>
                       </p>
                     </div>
                     <div className="info-item padd-15">
                       <p>
-                        Degree : <span>MCS</span>
+                        Degree : <span>MIT</span>
                       </p>
                     </div>
                     <div className="info-item padd-15">
@@ -74,7 +76,11 @@ const About: NextPage = () => {
                   </div>
                   <div className="row">
                     <div className="buttons padd-15">
-                      <a href="/" target="_target" className="btn">
+                      <a
+                        href="/waqasahmed.pdf"
+                        target="_target"
+                        className="btn"
+                      >
                         Download CV
                       </a>
                       <a
@@ -137,8 +143,8 @@ const About: NextPage = () => {
                           </h4>
                           <p className="timeline-text">
                             Since 2024 I started to learn Programming. I have
-                            learn Html, Css, JavaScript, Typescript, React and
-                            Next js. Now I am a Professional Web Designer..
+                            learning Html, Css, JavaScript, Typescript, React
+                            and Next js. Now I am a Professional Web Designer.
                           </p>
                         </div>
                         {/* Timeline Item end */}
@@ -149,7 +155,7 @@ const About: NextPage = () => {
                             <i className="fa fa-calendar" /> 2004 to 2006
                           </h6>
                           <h4 className="timeline-title">
-                            Master in Computer Science
+                            Master in Information Technolgy
                           </h4>
                           <p className="timeline-text">
                             From 2004 I started my journey to be a Software
@@ -167,7 +173,7 @@ const About: NextPage = () => {
                             Post Graduate Diploma in Computer Science
                           </h4>
                           <p className="timeline-text">
-                            In 1999, I get the PGD from Govt Islamia College
+                            In 1999, I got the PGD from Govt Islamia College
                             Civil Lines Lahore.
                           </p>
                         </div>
@@ -193,8 +199,8 @@ const About: NextPage = () => {
                           <p className="timeline-text">
                             From 2004 I am woking in Real Estate as Sale
                             Executive at DHA Lahore. In 2016 I have registared
-                            my own Office with name of Lasani Real Estate and
-                            Consultant with DHA, Lahore.
+                            my own Office with the name of Lasani Real Estate
+                            and Consultant with DHA, Lahore.
                           </p>
                         </div>
                         {/* Timeline Item end */}
