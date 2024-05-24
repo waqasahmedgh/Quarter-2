@@ -1,115 +1,106 @@
 "use client";
 import React, { useState } from "react";
 
+// Define type for a task
 type Task = {
   id: number;
-  title: string;
-  completed: boolean;
+  text: string;
 };
 
-const ToDoList = () => {
+const TodoList: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [newTask, setNewTask] = useState("");
-  const [editing, setEditing] = useState(null);
+  const [inputValue, setInputValue] = useState<string>("");
+  const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
+  const [editingTaskText, setEditingTaskText] = useState<string>("");
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    if (newTask !== "") {
-      setTasks([
-        ...tasks,
-        { id: tasks.length + 1, title: newTask, completed: false },
-      ]);
-      setNewTask("");
+  // Function to add a new task
+  const addTask = () => {
+    if (inputValue.trim() !== "") {
+      setTasks([...tasks, { id: Date.now(), text: inputValue }]);
+      setInputValue("");
     }
   };
 
-  const handleEdit = (index: number) => {
-    console.log("editing : " + index);
-    if (index) {
-      setEditing(index);
+  // Function to delete a task
+  const deleteTask = (id: number) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
+  // Function to edit a task
+  const editTask = (id: number) => {
+    setEditingTaskId(id);
+    const taskToEdit = tasks.find((task) => task.id === id);
+    if (taskToEdit) {
+      setEditingTaskText(taskToEdit.text);
     }
   };
 
-  const handleUpdate = (event: React.ChangeEvent<HTMLInputElement>) => {
-    event.preventDefault();
-    if (editing !== null) {
-      console.log("editing :" + editing);
-      const updatedTasks = tasks.map((task, index) => {
-        console.log("editing 2:" + editing + "index 2 :" + index);
-        if (index === editing) {
-          console.log("task :" + task);
-          return { ...task, title: event.target.value };
+  // Function to save edited task
+  const saveEditedTask = () => {
+    setTasks(
+      tasks.map((task) => {
+        if (task.id === editingTaskId) {
+          return { ...task, text: editingTaskText };
         }
-        console.log("task out if:" + task);
         return task;
-      });
-      setTasks(updatedTasks);
-      setEditing(null);
-    }
-  };
-
-  const handleDelete = (index: number) => {
-    setTasks(tasks.filter((task, i) => i !== index));
+      })
+    );
+    setEditingTaskId(null);
+    setEditingTaskText("");
   };
 
   return (
-    <div className="container mx-auto p-4 pt-6 pb-8 bg-white rounded shadow-md">
+    <div className="container mx-auto mt-8">
       <h1 className="text-3xl font-bold mb-4">To-Do List</h1>
-      <form onSubmit={handleSubmit}>
+      <div className="mb-4">
         <input
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
           type="text"
-          value={newTask}
-          onChange={(event) => setNewTask(event.target.value)}
-          placeholder="Add new task"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          className="border rounded px-4 py-2 mr-2"
         />
         <button
-          className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          type="submit"
+          onClick={addTask}
+          className="bg-blue-500 text-white px-4 py-2 rounded"
         >
-          Add Task
+          Add
         </button>
-      </form>
+      </div>
       <ul>
-        {tasks.map((task, index) => (
-          <li key={task.id} className="flex items-center justify-between mb-4">
-            <input
-              className="mr-4"
-              type="checkbox"
-              checked={task.completed}
-              onChange={() => {
-                const updatedTasks = tasks.map((task) =>
-                  task.id === tasks[index].id
-                    ? { ...task, completed: !task.completed }
-                    : task
-                );
-                setTasks(updatedTasks);
-              }}
-            />
-            {editing === index ? (
-              <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                type="text"
-                value={task.title}
-                onChange={handleUpdate}
-              />
+        {tasks.map((task) => (
+          <li key={task.id} className="mb-2">
+            {editingTaskId === task.id ? (
+              <>
+                <input
+                  type="text"
+                  value={editingTaskText}
+                  onChange={(e) => setEditingTaskText(e.target.value)}
+                  className="border rounded px-2 py-1 mr-2"
+                />
+                <button
+                  onClick={saveEditedTask}
+                  className="bg-green-500 text-white px-2 py-1 rounded mr-2"
+                >
+                  Save
+                </button>
+              </>
             ) : (
-              <span className={`${task.completed ? "line-through" : ""}`}>
-                {task.title}
-              </span>
+              <>
+                <span>{task.text}</span>
+                <button
+                  onClick={() => editTask(task.id)}
+                  className="bg-yellow-500 text-white px-2 py-1 rounded ml-2"
+                >
+                  Edit
+                </button>
+                <button
+                  onClick={() => deleteTask(task.id)}
+                  className="bg-red-500 text-white px-2 py-1 rounded ml-2"
+                >
+                  Delete
+                </button>
+              </>
             )}
-            <button
-              className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              onClick={() => handleEdit(index)}
-            >
-              Edit
-            </button>
-            <button
-              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              onClick={() => handleDelete(index)}
-            >
-              Delete
-            </button>
           </li>
         ))}
       </ul>
@@ -117,4 +108,4 @@ const ToDoList = () => {
   );
 };
 
-export default ToDoList;
+export default TodoList;
