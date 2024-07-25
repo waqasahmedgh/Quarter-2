@@ -7,7 +7,7 @@ type Task = {
   text: string;
 };
 
-const TodoList: React.FC = () => {
+const TodoList: () => React.JSX.Element = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [inputValue, setInputValue] = useState<string>("");
   const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
@@ -16,7 +16,7 @@ const TodoList: React.FC = () => {
   // Function to add a new task
   const addTask = () => {
     if (inputValue.trim() !== "") {
-      setTasks([...tasks, { id: Date.now(), text: inputValue }]);
+      setTasks([...tasks, { id: tasks.length + 1, text: inputValue }]);
       setInputValue("");
     }
   };
