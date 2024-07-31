@@ -39,9 +39,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## Point of Development and Create Project
 
 1.  pnpm create create-next-app@latest
+
 2.  pnpm create sanity@latest -- --template clean --create-project "dinemart-sanity-project" --dataset production
+# update the latest version of sanity
 3.  pnpm add --save-prod @sanity/vision@3 sanity@3 @sanity/image-url@1 styled-components@6
-4.  pnpm dev
+
+4.  pnpm add @reduxjs/toolkit
 
 5.  pnpm add react-hot-toast
 
@@ -50,11 +53,11 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
  
 7.  pnpm dlx shadcn-ui init
 
-# Follow the prompts to set up Shadcn UI
-
 8.  pnpm add react-redux
 
 9.  pnpm add @radix-ui/react-slot
 
-10. pnpm add @reduxjs/toolkit
+10. pnpm add react-social-icons
+
+
 

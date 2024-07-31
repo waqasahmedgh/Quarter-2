@@ -1,5 +1,8 @@
+import { M_PLUS_2 } from "next/font/google";
 import { Product } from "./types";
 import P1 from "/public/p1.webp";
+
+// import P2 from "@/product1.png"
 
 export const Products: Product[] = [
   {
@@ -9,7 +12,7 @@ export const Products: Product[] = [
     category: "female",
     price: 20,
     image: P1,
-  },
+},
   {
     id: 2,
     name: "Product 2",
